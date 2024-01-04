@@ -20,9 +20,6 @@ const reducer = (state, action) => {
         default:
             return state;
     }
-   // if(action.type === 'ADD_COLUMN') return { ...state, columns: [...state.columns, { ...action.newColumn, id: shortid() }]};
-
-   // return state;
 };
 
 const store = createStore(
