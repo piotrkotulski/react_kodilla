@@ -6,13 +6,13 @@ const reducer = (state, action) => {
     switch (action.type) {
 
         case 'ADD_COLUMN':
-            return  { ...state, columns: [...state.columns, { id: shortid(), ...action.newColumn  }]};
+            return  { ...state, columns: [...state.columns, { id: shortid(), ...action.payload  }]};
 
         case 'ADD_CARD':
             const newCard = {
                 id: shortid(),
-                columnId: action.newCard.columnId,
-                title: action.newCard.title
+                columnId: action.payload.columnId,
+                title: action.payload.title
             };
             return {
                 ...state,
