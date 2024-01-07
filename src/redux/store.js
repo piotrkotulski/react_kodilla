@@ -33,6 +33,12 @@ export const addList = (title, description) => {
         },
     };
 };
+export const toggleCardFavorite = (cardId) => {
+    return {
+        type: 'TOGGLE_CARD_FAVORITE',
+        payload: cardId,
+    };
+};
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -44,6 +50,7 @@ const reducer = (state, action) => {
             const newCard = {
                 id: shortid(),
                 columnId: action.payload.columnId,
+                isFavorite: false,
                 title: action.payload.title
             };
             return {
@@ -65,6 +72,8 @@ const reducer = (state, action) => {
                 ...state,
                 lists: [...state.lists, newList],
             };
+        case 'TOGGLE_CARD_FAVORITE':
+            return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
 
         default:
             return state;
