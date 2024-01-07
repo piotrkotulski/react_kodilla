@@ -10,20 +10,29 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+
 }
 
 .favorite {
   background-color: #f7f7f7;
   border: 1px solid #ccc;
 
-  i {
-    color: darkorange;
+  .favoriteButton {
+    i {
+      color: darkorange;
+    }
   }
 }
 
 
-.favoriteButton {
+.favoriteButton, .removeButton {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.removeButton {
+  &:hover {
+    color: $color-warning;
+  }
 }
