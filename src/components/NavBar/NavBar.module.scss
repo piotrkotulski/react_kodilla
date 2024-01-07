@@ -8,22 +8,24 @@
   padding: 10px 50px;
 
 
-  div{
+  div {
 
     font-size: 24px;
   }
 }
 
-.navbarLinks{
+.navbarLinks {
   display: flex;
   list-style-type: none;
 
-
-
-  a{
+  a {
     color: white;
     margin-right: 20px;
     text-decoration: none;
+
+    &.linkActive {
+      color: $color-warning;
+    }
 
   }
 }
